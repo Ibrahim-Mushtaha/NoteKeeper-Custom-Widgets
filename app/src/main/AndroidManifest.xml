@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  package="com.jwhh.notekeeper">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jwhh.notekeeper">
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <receiver
+            android:name=".widgets.NoteKeeperAppWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/note_keeper_app_widget_info" />
+        </receiver>
+
         <activity
-          android:name=".ui.NoteActivity"
-          android:label="Edit Note"
-          android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".ui.NoteActivity"
+            android:label="Edit Note"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.ItemsActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +39,9 @@
             </intent-filter>
         </activity>
 
-
+        <service android:name=".widgets.AppWidgetRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
     </application>
+
 </manifest>

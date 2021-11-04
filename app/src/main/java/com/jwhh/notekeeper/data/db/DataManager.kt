@@ -1,7 +1,7 @@
 package com.jwhh.notekeeper.data.db
 
-import com.jwhh.notekeeper.CourseInfo
-import com.jwhh.notekeeper.NoteInfo
+import com.jwhh.notekeeper.data.model.CourseInfo
+import com.jwhh.notekeeper.data.model.NoteInfo
 
 object DataManager {
     val courses = HashMap<String, CourseInfo>()

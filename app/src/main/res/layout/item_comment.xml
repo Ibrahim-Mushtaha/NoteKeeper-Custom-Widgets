@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingStart="32dp"
+  android:paddingEnd="32dp"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <TextView
+    android:id="@+id/name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="14dp"
+    android:textColor="#666666"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:text="Bobley"/>
+
+  <TextView
+    android:id="@+id/comment"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:textSize="16dp"
+    android:layout_marginTop="6dp"
+    android:paddingBottom="24dp"
+    android:textColor="#333333"
+    app:layout_constraintTop_toBottomOf="@id/name"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:text="Sample comment"/>
+
+</android.support.constraint.ConstraintLayout>
