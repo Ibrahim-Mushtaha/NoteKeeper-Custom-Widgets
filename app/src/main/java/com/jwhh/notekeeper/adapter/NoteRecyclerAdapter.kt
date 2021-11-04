@@ -1,4 +1,4 @@
-package com.jwhh.notekeeper
+package com.jwhh.notekeeper.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.jwhh.notekeeper.data.db.DataManager
+import com.jwhh.notekeeper.NOTE_POSITION
+import com.jwhh.notekeeper.ui.NoteActivity
+import com.jwhh.notekeeper.R
 
 class NoteRecyclerAdapter(val context: Context) : RecyclerView.Adapter<NoteRecyclerAdapter.ViewHolder>()
 {

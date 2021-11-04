@@ -1,10 +1,12 @@
-package com.jwhh.notekeeper
+package com.jwhh.notekeeper.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import com.jwhh.notekeeper.*
+import com.jwhh.notekeeper.data.db.DataManager
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*

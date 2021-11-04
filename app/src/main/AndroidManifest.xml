@@ -12,11 +12,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-          android:name=".NoteActivity"
+          android:name=".ui.NoteActivity"
           android:label="Edit Note"
           android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ItemsActivity"
+            android:name=".ui.ItemsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

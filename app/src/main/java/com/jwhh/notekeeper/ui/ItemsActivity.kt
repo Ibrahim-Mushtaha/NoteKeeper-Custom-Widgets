@@ -1,4 +1,4 @@
-package com.jwhh.notekeeper
+package com.jwhh.notekeeper.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,9 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.jwhh.notekeeper.R
+import com.jwhh.notekeeper.adapter.CourseRecyclerAdapter
+import com.jwhh.notekeeper.adapter.NoteRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_items.*
 import kotlinx.android.synthetic.main.app_bar_items.*
 import kotlinx.android.synthetic.main.content_items.*
@@ -44,7 +47,10 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         }
 
         val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+                this, drawer_layout, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
