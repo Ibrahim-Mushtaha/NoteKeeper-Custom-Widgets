@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.ArrayAdapter
 import com.jwhh.notekeeper.*
 import com.jwhh.notekeeper.data.db.DataManager
+import com.jwhh.notekeeper.notification.ReminderNotification
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -65,6 +66,15 @@ class NoteActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
+            R.id.action_reminder -> {
+                ReminderNotification.notify(
+                    this,
+                "Reminder",
+                getString(R.string.reminder_body,DataManager.notes[notePosition].title),
+                    notePosition
+                )
+                true
+            }
             R.id.action_cancel -> {
                 isCancelling = true
                 finish()
