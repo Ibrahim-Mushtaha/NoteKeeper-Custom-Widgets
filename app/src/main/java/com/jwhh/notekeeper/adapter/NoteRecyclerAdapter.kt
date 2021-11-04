@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.jwhh.notekeeper.data.db.DataManager
-import com.jwhh.notekeeper.NOTE_POSITION
+import com.jwhh.notekeeper.other.NOTE_POSITION
 import com.jwhh.notekeeper.ui.NoteActivity
 import com.jwhh.notekeeper.R
 
@@ -35,7 +35,7 @@ class NoteRecyclerAdapter(val context: Context) : RecyclerView.Adapter<NoteRecyc
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textCourse: TextView = itemView.findViewById<TextView>(R.id.textCourse)
         val textTitle: TextView = itemView.findViewById<TextView>(R.id.textTitle)
-        var currentPosition = 0;
+        var currentPosition = 0
 
         init {
             itemView.setOnClickListener {

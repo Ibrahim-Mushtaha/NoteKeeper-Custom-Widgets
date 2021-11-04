@@ -1,4 +1,4 @@
-package com.jwhh.notekeeper
+package com.jwhh.notekeeper.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.jwhh.notekeeper.R
 import com.jwhh.notekeeper.data.model.NoteInfo
 
 class CommentRecyclerAdapter(val context: Context, val note: NoteInfo) : RecyclerView.Adapter<CommentRecyclerAdapter.ViewHolder>() {

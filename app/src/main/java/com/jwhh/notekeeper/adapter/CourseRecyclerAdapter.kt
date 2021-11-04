@@ -26,7 +26,7 @@ class CourseRecyclerAdapter(val context: Context) : RecyclerView.Adapter<CourseR
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val course = courses[position]
-        holder.textCourse.text = course?.title
+        holder.textCourse.text = course.title
         holder.currentPosition = position
     }
 
