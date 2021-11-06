@@ -10,8 +10,8 @@ import com.jwhh.notekeeper.data.db.DataManager
 import com.jwhh.notekeeper.data.model.CourseInfo
 import com.jwhh.notekeeper.data.model.NoteInfo
 import com.jwhh.notekeeper.notification.ReminderNotification
-import com.jwhh.notekeeper.other.NOTE_POSITION
-import com.jwhh.notekeeper.other.POSITION_NOT_SET
+import com.jwhh.notekeeper.utils.NOTE_POSITION
+import com.jwhh.notekeeper.utils.POSITION_NOT_SET
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*

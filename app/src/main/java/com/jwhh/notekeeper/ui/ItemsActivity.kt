@@ -2,7 +2,6 @@ package com.jwhh.notekeeper.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -11,29 +10,48 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.jwhh.notekeeper.BR
 import com.jwhh.notekeeper.R
-import com.jwhh.notekeeper.adapter.CourseRecyclerAdapter
-import com.jwhh.notekeeper.adapter.NoteRecyclerAdapter
+import com.jwhh.notekeeper.adapter.GenericAdapter
+import com.jwhh.notekeeper.data.db.DataManager
+import com.jwhh.notekeeper.data.model.CourseInfo
+import com.jwhh.notekeeper.data.model.NoteInfo
+import com.jwhh.notekeeper.utils.ClickEnum
+import com.jwhh.notekeeper.utils.NOTE_POSITION
+import com.jwhh.notekeeper.utils.OnListItemViewClickListener
+import com.jwhh.notekeeper.utils.showSnackBar
 import kotlinx.android.synthetic.main.activity_items.*
 import kotlinx.android.synthetic.main.app_bar_items.*
 import kotlinx.android.synthetic.main.content_items.*
 
-class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class ItemsActivity : AppCompatActivity(),
+    NavigationView.OnNavigationItemSelectedListener,
+    OnListItemViewClickListener<NoteInfo> {
 
-    val noteLayoutManager by lazy {
+    private val noteLayoutManager by lazy {
         LinearLayoutManager(this)
     }
 
-    val noteRecyclerAdapter by lazy {
-        NoteRecyclerAdapter(this)
-    }
-
-    val courseLayoutManager by lazy {
+    private val courseLayoutManager by lazy {
         GridLayoutManager(this, 2)
     }
 
-    val courseRecyclerAdapter by lazy {
-        CourseRecyclerAdapter(this)
+    private val noteAdapter by lazy {
+        GenericAdapter(R.layout.item_note,BR.Note,this)
+    }
+
+    private val courseRecyclerAdapter by lazy {
+        GenericAdapter(R.layout.item_course,BR.Course,object :
+            OnListItemViewClickListener<CourseInfo>{
+            override fun onClickItem(itemViewModel: CourseInfo, type: ClickEnum, position: Int) {
+                when(type){
+                    ClickEnum.ONE ->{
+                        recyclerItems.showSnackBar(itemViewModel.title)
+                    }
+                }
+            }
+
+        })
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,16 +79,18 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
     override fun onResume() {
         super.onResume()
-        noteRecyclerAdapter.notifyDataSetChanged()
+        noteAdapter.notifyDataSetChanged()
     }
 
-    fun displayNotes() {
+    private fun displayNotes() {
+        noteAdapter.data = DataManager.notes
         recyclerItems.layoutManager = noteLayoutManager
-        recyclerItems.adapter = noteRecyclerAdapter
+        recyclerItems.adapter = noteAdapter
         nav_view.menu.findItem(R.id.nav_notes).isChecked = true
     }
 
-    fun displayCourses() {
+    private fun displayCourses() {
+        courseRecyclerAdapter.data =  DataManager.courses.values.toList()
         recyclerItems.layoutManager = courseLayoutManager
         recyclerItems.adapter = courseRecyclerAdapter
         nav_view.menu.findItem(R.id.nav_courses).isChecked = true
@@ -96,7 +116,7 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> {
-                showSnackbar("Display settings")
+                recyclerItems.showSnackBar("Display settings")
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -113,10 +133,10 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 displayCourses()
             }
             R.id.nav_share -> {
-                showSnackbar("Don't you think you've shared enough")
+                recyclerItems.showSnackBar("Don't you think you've shared enough")
             }
             R.id.nav_send -> {
-                showSnackbar("Send")
+                recyclerItems.showSnackBar("Send")
             }
         }
 
@@ -124,8 +144,15 @@ class ItemsActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         return true
     }
 
-    private fun showSnackbar(message: String) {
-        Snackbar.make(recyclerItems, message, Snackbar.LENGTH_LONG).show()
+
+    override fun onClickItem(itemViewModel: NoteInfo, type: ClickEnum,position:Int) {
+        when(type){
+            ClickEnum.ONE ->{
+                val intent = Intent(this, NoteActivity::class.java)
+                intent.putExtra(NOTE_POSITION, position)
+                startActivity(intent)
+            }
+        }
     }
 
 }

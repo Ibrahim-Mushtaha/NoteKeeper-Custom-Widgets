@@ -6,7 +6,12 @@
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/drawable-xxhdpi/rounded_corner_button.xml" value="0.12760416666666666" />
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/drawable/ic_notifications_white_24dp.xml" value="0.2484375" />
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/drawable/ic_share_black_24dp.xml" value="0.2604166666666667" />
+        <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/activity_items.xml" value="0.33796296296296297" />
+        <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/app_bar_items.xml" value="0.18854166666666666" />
+        <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/content_items.xml" value="0.34479166666666666" />
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/item_comment.xml" value="0.24427083333333333" />
+        <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/item_course.xml" value="0.34479166666666666" />
+        <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/item_note.xml" value="0.34479166666666666" />
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/item_note_widget.xml" value="0.23229166666666667" />
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/layout/note_keeper_app_widget.xml" value="0.23229166666666667" />
         <entry key="..\:/Application Project/AndroidStudioProjects/goolgleApp/AndroidAppsWithKotlin_NotificationsAndWidgets/app/src/main/res/menu/menu_note.xml" value="0.23229166666666667" />

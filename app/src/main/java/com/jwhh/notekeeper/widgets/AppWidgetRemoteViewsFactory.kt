@@ -7,7 +7,7 @@ import com.jwhh.notekeeper.R
 import com.jwhh.notekeeper.data.db.DataManager
 import android.content.Intent
 import android.os.Bundle
-import com.jwhh.notekeeper.other.NOTE_POSITION
+import com.jwhh.notekeeper.utils.NOTE_POSITION
 
 class AppWidgetRemoteViewsFactory(val context: Context) :
     RemoteViewsService.RemoteViewsFactory {
